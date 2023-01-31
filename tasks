@@ -1,27 +1,29 @@
 #include <iostream>
-#include <cstring>
 
-void zigZagConcat(std::string str1, int ind1, std::string str2, int ind2) 
+void zigZagConcat(char* s1, char* s2)
 {
-    if (ind1 >= str1.size()) {
-        std::cout << str2.substr(ind2) << std::endl;
-        return;
+    int i1 = 0, i2 = 0;
+    while (s1[i1] != '\0' && s2[i2] != '\0') 
+    {
+        std::cout << s1[i1] << s2[i2];
+        i1++;
+        i2++;
     }
-    if (ind2 >= str2.size()) {
-        std::cout << str1.substr(ind1) << std::endl;
-        return;
+    while (s1[i1] != '\0') {
+        std::cout << s1[i1];
+        i1++;
     }
-    char c1 = str1[ind1];
-    char c2 = str2[ind2];
-    std::cout << c1 << c2;
-    zigZagConcat(str1, ind1 + 1, str2, ind2 + 1);
+    while (s2[i2] != '\0') {
+        std::cout << s2[i2];
+        i2++;
+    }
 }
 
 int main()
 {
-  std::string part 1 = "ACE";
-  std::string part 2 = "BDFGHI"
-  zigZagConcat(part 1, 0, part 2, 0);
+  char part1[] = "ACE";
+  char part2[] = "BDFGHI"
+  zigZagConcat(part1, part2);
   return 0;
 
 }
